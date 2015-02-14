@@ -24,6 +24,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-lodash');
     grunt.loadNpmTasks('grunt-if-missing');
 
-    grunt.registerTask('build-lodash', ['if-missing:lodash:build:dest']);    
+    grunt.registerTask('build-lodash', ['if-missing:lodash:build:dest']);
+    grunt.registerTask('travis', ['build-lodash', 'jasmine']);
     grunt.registerTask('default', ['build-lodash', 'jasmine']);
 };
